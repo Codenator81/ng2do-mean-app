@@ -1,0 +1,27 @@
+{
+  "name": "ng2do-mean-app",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Codenator"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular 2",
+    "MEAN"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "https://github.com/Codenator81/ng2do-mean-app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

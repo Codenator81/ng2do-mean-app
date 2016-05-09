@@ -42,6 +42,7 @@ declare var System: any;
 
 // Apply the CLI SystemJS configuration.
 System.config({
+  "baseURL": "my-app/",
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
