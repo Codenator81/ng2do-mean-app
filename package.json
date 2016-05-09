@@ -1,0 +1,32 @@
+{
+  "name": "ng2do-mean-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codenator81/ng2do-mean-app.git"
+  },
+  "keywords": [
+    "angular 2",
+    "MEAN"
+  ],
+  "author": "Codenator",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Codenator81/ng2do-mean-app/issues"
+  },
+  "homepage": "https://github.com/Codenator81/ng2do-mean-app#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "mongojs": "^2.4.0",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  }
+}
