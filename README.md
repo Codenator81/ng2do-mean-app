@@ -5,5 +5,5 @@ Created angular 2 and build
 cd /public/vendor
 ng new my-app --prefix my-app --skip-git true
 cd my-app
-ng build -prod --output-path ./../../../my-app
+ng build -prod --output-path ./../../my-app
 ```
