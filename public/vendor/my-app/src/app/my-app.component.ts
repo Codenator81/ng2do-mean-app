@@ -6,7 +6,8 @@ import {TodoService} from "./todo.service";
 @Component({
   moduleId: module.id,
   selector: 'my-app-app',
-  templateUrl: 'my-app.component.html'
+  templateUrl: 'my-app.component.html',
+  providers: [TodoService],
 })
 export class MyAppAppComponent implements OnInit {
   todos = [];
@@ -23,18 +24,17 @@ export class MyAppAppComponent implements OnInit {
 
   addTodo($event, todoText) {
     if ($event.which === 13) {
+      var result;
       var _todo = {
         text: todoText.value,
         isCompleted: false
       };
-
-      this._todoService.save(_todo)
-        .map(res => res.json())
-        .subscribe(todos => {
-          // keep things in sync
-          this.todos.push(todos)
-          todoText.value = '';
-        })
+      result = this._todoService.save(_todo);
+      result.subscribe(x => {
+           // keep things in sync
+           this.todos.push(_todo)
+           todoText.value = '';
+      })
     }
   }
 

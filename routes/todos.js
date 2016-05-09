@@ -30,7 +30,8 @@ router.post('/todo', function(req, res, next) {
     if (!todo.text || !(todo.isCompleted + '')) {
         res.status(400);
         res.json({
-            "error": "Invalid Data"
+            "error": "Invalid Data",
+            'todo': todo
         });
     } else {
         db.todos.save(todo, function(err, result) {
