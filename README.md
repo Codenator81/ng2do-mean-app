@@ -1,4 +1,11 @@
-# ng2do-mean-app
+# MEAN Stack using Angular 2
+
+1) Install packages
+```console
+npm install -g angular-cli
+```
+
+
 
 Created angular 2 and build
 ```console
