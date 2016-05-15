@@ -471,8 +471,7 @@ p.s. Don`t forget navigate to http://localhost:3000
 
 #### ToDo Integrate Universal for preloading
 
-## Currently Universal not work on SystemJs but on Webpack
-My approach on Webpack there [mean-ng2-universal](https://github.com/Codenator81/mean-ng2-universal)
+## Currently Universal works with Webpack
 
 Will update README on request via GitHub issue
 If you give me star I will be more happy to do work :)
