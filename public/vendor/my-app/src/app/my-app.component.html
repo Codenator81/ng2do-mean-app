@@ -21,8 +21,8 @@
         <input [class.hidden]="!todo.isEditMode" type="button" class="btn btn-warning" value="Cancel" (click)="setEditState(todo, false)" />
       </div>
       <div class="col-md-3 col-sm-3 col-xs-3">
-        <input type="button" class="btn btn-info" [class.disabled]="todo.isCompleted" class="pull-right" value="Edit" (click)="setEditState(todo, true)" />
-        <input type="button" class="btn btn-danger" class="pull-right" value="Delete" (click)="deleteTodo(todo)" />
+        <input type="button" class="btn btn-info pull-right" [class.disabled]="todo.isCompleted" value="Edit" (click)="setEditState(todo, true)" />
+        <input type="button" class="btn btn-danger pull-right" value="Delete" (click)="deleteTodo(todo)" />
       </div>
     </div>
   </div>

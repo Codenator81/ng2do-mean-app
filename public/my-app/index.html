@@ -4,34 +4,17 @@
   <meta charset="utf-8">
   <title>MyApp</title>
   <base href="/">
-  
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Service worker support is disabled by default.
-       Install the worker script and uncomment to enable.
-       Only enable service workers in production.
-  <script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/worker.js').catch(function(err) {
-        console.log('Error installing service worker: ', err);
-      });
-    }
-  </script>
-  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <my-app-app>Loading...</my-app-app>
-
-  <script src="vendor/es6-shim/es6-shim.js"></script>
-  <script src="vendor/reflect-metadata/Reflect.js"></script>
-  <script src="vendor/systemjs/dist/system.src.js"></script>
-  <script src="vendor/zone.js/dist/zone.js"></script>
-
-  <script>
-    System.import('system-config.js').then(function () {
-      System.import('main');
-    }).catch(console.error.bind(console));
-  </script>
+  <div class="container">
+    <my-app-app>Loading...</my-app-app>
+  </div>
+  <script type="text/javascript" src="inline.js"></script>
+  <script type="text/javascript" src="main.55171a7a6605a78b4c68.bundle.js"></script>
+  <script type="text/javascript" src="styles.b52d2076048963e7cbfd.bundle.js"></script>
 </body>
 </html>

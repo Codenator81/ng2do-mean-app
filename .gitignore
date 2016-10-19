@@ -15,9 +15,9 @@ bower_components
 /public/vendor/my-app/.sass-cache
 /public/vendor/my-app/connect.lock
 /public/vendor/my-app/coverage/*
-/public/vendor/my-app/libpeerconnection.log
-/public/vendor/my-appnpm-debug.log
-/public/vendor/my-apptestem.log
+/public/vendor/my-app/lib/peerconnection.log
+/public/vendor/my-app/npm-debug.log
+/public/vendor/my-app/testem.log
 /public/vendor/my-app/typings
 
 # e2e
