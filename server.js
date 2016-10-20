@@ -9,7 +9,6 @@ var todos = require('./routes/todos');
 
 var app = express();
 
-//app.set('views', path.join(__dirname, 'views'));
 app.set('views', path.join(__dirname, './public/my-app/'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
@@ -20,7 +19,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './public/my-app/')));
 app.use('/', index);
 app.use('/api/v1/', todos);
 
