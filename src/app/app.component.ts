@@ -38,23 +38,6 @@ export class AppComponent implements OnInit {
     }
   }
 
-  updateTodoText($event, todo) {
-    if ($event.which === 13) {
-      todo.text = $event.target.value;
-      let _todo = {
-        _id: todo._id,
-        text: todo.text,
-        isCompleted: todo.isCompleted
-      };
-
-      this._todoService.update(_todo)
-        .map(res => res.json())
-        .subscribe(data => {
-          this.setEditState(todo, false);
-        });
-    }
-  }
-
   updateStatus(todo) {
     let _todo = {
       _id: todo._id,
@@ -67,7 +50,6 @@ export class AppComponent implements OnInit {
       .subscribe(data => {
         todo.isCompleted = !todo.isCompleted;
       });
-
   }
 
   deleteTodo(todo) {

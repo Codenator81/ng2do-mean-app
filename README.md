@@ -1,11 +1,13 @@
-# MEAN Stack using Angular 2
+# MEAN Stack using Angular 2 and Universal
 
 Used external mongoDB server but the same way you can use local one.
 Just change in `/routes/tosos.js` to local MongoDB server
 ```js
 var db = mongojs('mongodb://admin:admin123@ds037827.mongolab.com:37827/ng2todoapp', ['todos']);
 ```
-Note: Will be updated soon to Universal
+This project now in stage of part two
+To start project afte `git clone` use `ung serve`
+command
 
 ## Part One
 1) Install packages
@@ -462,10 +464,14 @@ Navigate to http://localhost:3000
 Finish of part One :)
 
 ## Part Two: Universal
-#### ToDo Integrate Universal
-
-## Currently Universal works with Webpack
+Just check code
+Shortest way use this https://github.com/devCrossNet/angular-cli#support-for-server-side-rendering
+This project compatible with ung (Universal CLI)
+To run after git clone  
+```console
+npm install 
+ung serve
+```
 
 Will update README on request via GitHub issue
 If you give me star I will be more happy to do work :)
-

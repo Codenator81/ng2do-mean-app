@@ -1,7 +1,7 @@
 {
   "project": {
-    "version": "1.0.0-beta.21",
-    "name": "todo-app"
+    "version": "1.0.0-alpha.universal.2-2",
+    "name": "tr-app"
   },
   "apps": [
     {
@@ -12,28 +12,31 @@
         "favicon.ico"
       ],
       "index": "index.html",
-      "main": "main.ts",
+      "main": "client.ts",
+      "nodeMain": "server.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "mobile": false,
+      "universal": true,
       "styles": [
         "../bower_components/bootstrap/dist/css/bootstrap.min.css",
         "styles.scss"
       ],
-      "scripts": [
-      ],
+      "scripts": [],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
+      },
+      "webpackCustom": {
+        "client": "webpack.client.ts",
+        "server": "webpack.server.ts"
       }
     }
   ],
-  "addons": [
-  ],
-  "packages": [
-  ],
+  "addons": [],
+  "packages": [],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
