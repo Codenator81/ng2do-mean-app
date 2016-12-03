@@ -1,5 +1,5 @@
 # MEAN Stack using Angular 2
-Note: Will be updated soon
+Note: Will be updated soon to latest Angular 2 and Universal
 
 1) Install packages
 ```console
