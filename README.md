@@ -4,7 +4,6 @@ Note: Will be updated soon to latest Angular 2 and Universal
 1) Install packages
 ```console
 npm install -g angular-cli
-npm init
 npm install --save body-parser cookie-parser ejs express mongojs morgan path
 ```
 2) Create Express server with routes

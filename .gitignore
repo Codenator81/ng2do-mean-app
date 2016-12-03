@@ -1,28 +1,35 @@
-node_modules
-.idea
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/public/vendor/my-app/dist
-/public/vendor/my-app/tmp
+/dist
+/tmp
 
 # dependencies
-bower_components
+/node_modules
+/bower_components
 
 # IDEs and editors
 /.idea
+/.vscode
+.project
+.classpath
+.c9/
+*.launch
+.settings/
 
 # misc
-/public/vendor/my-app/.sass-cache
-/public/vendor/my-app/connect.lock
-/public/vendor/my-app/coverage/*
-/public/vendor/my-app/lib/peerconnection.log
-/public/vendor/my-app/npm-debug.log
-/public/vendor/my-app/testem.log
-/public/vendor/my-app/typings
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
 
 # e2e
-/public/vendor/my-app/e2e/*.js
-/public/vendor/my-app/e2e/*.map
+/e2e/*.js
+/e2e/*.map
 
 #System Files
 .DS_Store
+Thumbs.db
