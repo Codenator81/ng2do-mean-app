@@ -7,6 +7,7 @@ var db = mongojs('mongodb://admin:admin123@ds037827.mongolab.com:37827/ng2todoap
 ```
 Note: Will be updated soon to Universal
 
+## Part One
 1) Install packages
 ```console
 npm install -g angular-cli
@@ -391,7 +392,7 @@ and edit src/index.html
 </body>
 </html>
 ```
-and e /src/styles.scss
+and edit /src/styles.scss
 ```scss
 * {
   -webkit-border-radius: 0 !important;
@@ -460,8 +461,8 @@ node server
 Navigate to http://localhost:3000
 Finish of part One :)
 
-
-#### ToDo Integrate Universal for preloading
+## Part Two: Universal
+#### ToDo Integrate Universal
 
 ## Currently Universal works with Webpack
 
