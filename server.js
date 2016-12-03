@@ -9,7 +9,7 @@ var todos = require('./routes/todos');
 
 var app = express();
 
-app.set('views', path.join(__dirname, './public/my-app/'));
+app.set('views', path.join(__dirname, './public/'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 app.use(logger('dev'));

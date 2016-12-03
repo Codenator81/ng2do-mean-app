@@ -1,9 +1,23 @@
 # MEAN Stack using Angular 2
+
+Warning: Total rebuilding in progress   
 Note: Will be updated soon to latest Angular 2 and Universal
 
 1) Install packages
 ```console
 npm install -g angular-cli
+ng new todoApp --skip-git true
+ng set defaults.styleExt scss
+```
+test ng2 app is working
+```
+ng serve
+```
+Navigate to http://localhost:4200/
+ 
+should see `app works!  
+Install packages for server side:
+```
 npm install --save body-parser cookie-parser ejs express mongojs morgan path
 ```
 2) Create Express server with routes
@@ -15,11 +29,13 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 var index = require('./routes/index');
 var todos = require('./routes/todos');
+
 var app = express();
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
+
+app.set('views', path.join(__dirname, './public/'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 app.use(logger('dev'));
@@ -27,21 +43,25 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './public/my-app/')));
 app.use('/', index);
 app.use('/api/v1/', todos);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
+
 var server = app.listen(3000, function() {
     var host = 'localhost';
     var port = server.address().port;
     console.log('App listening at http://%s:%s', host, port);
 });
+
 module.exports = app;
 ```
 ```js
@@ -144,24 +164,15 @@ router.delete('/todo/:id', function(req, res) {
 module.exports = router;
 ```
 
-3)Created angular 2 and build
+3) Angular 2 build command for production
 ```console
-cd /public/vendor
-ng new my-app --prefix my-app --skip-git true
-cd my-app
-ng build -prod --output-path ./../../my-app
+ng build -prod --output-path ./public
 ```
 4) Install Bower in root of project
  ```console
  touch .bowerrc
  npm install -g bower
  bower init
- ```
- and add to .bowerrc
- ```json
- {
-   "directory" : "public/vendor/bower_components"
- }
  ```
  to bower.json
  ```js
@@ -173,6 +184,15 @@ ng build -prod --output-path ./../../my-app
  ```
 ```console
 bower install
+```
+add bootstrap 3 to angular-cli.json for building with webpack
+```json
+//...
+     "styles": [
+        "../bower_components/bootstrap/dist/css/bootstrap.min.css",
+        "styles.scss"        
+      ],
+//...      
 ```
 5) Build ng2 app
 Edit /public/vendor/my-app/src/app/my-app.component.html

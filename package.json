@@ -2,6 +2,7 @@
   "name": "todo-app",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "server.js",
   "angular-cli": {},
   "scripts": {
     "start": "ng serve",
