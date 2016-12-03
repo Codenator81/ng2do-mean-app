@@ -1,5 +1,10 @@
 # MEAN Stack using Angular 2
 
+Used external mongoDB server but the same way you can use local one.
+Just change in `/routes/tosos.js` to local MongoDB server
+```js
+var db = mongojs('mongodb://admin:admin123@ds037827.mongolab.com:37827/ng2todoapp', ['todos']);
+```
 Note: Will be updated soon to Universal
 
 1) Install packages
