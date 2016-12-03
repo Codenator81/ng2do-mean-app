@@ -6,7 +6,12 @@ Just change in `/routes/tosos.js` to local MongoDB server
 var db = mongojs('mongodb://admin:admin123@ds037827.mongolab.com:37827/ng2todoapp', ['todos']);
 ```
 This project now in stage of part two
-To start project afte `git clone` use `ung serve`
+To start project after `git clone` use
+```
+npm install
+bower install
+ung serve
+```
 command
 
 ## Part One
@@ -470,6 +475,7 @@ This project compatible with ung (Universal CLI)
 To run after git clone  
 ```console
 npm install 
+bower install
 ung serve
 ```
 
