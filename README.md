@@ -8,6 +8,7 @@ var db = mongojs('mongodb://admin:admin123@ds037827.mongolab.com:37827/ng2todoap
 This project now in stage of part two
 To start project after `git clone` use
 ```
+npm install -g universal-cli
 npm install
 bower install
 ung serve
@@ -478,6 +479,7 @@ Shortest way use this https://github.com/devCrossNet/angular-cli#support-for-ser
 This project compatible with ung (Universal CLI)
 To run after git clone  
 ```console
+npm install -g universal-cli
 npm install 
 bower install
 ung serve
