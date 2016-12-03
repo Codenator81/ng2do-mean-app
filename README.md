@@ -1,7 +1,6 @@
 # MEAN Stack using Angular 2
 
-Warning: Total rebuilding in progress   
-Note: Will be updated soon to latest Angular 2 and Universal
+Note: Will be updated soon to Universal
 
 1) Install packages
 ```console
@@ -15,7 +14,7 @@ ng serve
 ```
 Navigate to http://localhost:4200/
  
-should see `app works!  
+should see `app works!`  
 Install packages for server side:
 ```
 npm install --save body-parser cookie-parser ejs express mongojs morgan path
@@ -45,7 +44,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, './public/my-app/')));
+app.use(express.static(path.join(__dirname, './public/')));
 app.use('/', index);
 app.use('/api/v1/', todos);
 
@@ -195,7 +194,7 @@ add bootstrap 3 to angular-cli.json for building with webpack
 //...      
 ```
 5) Build ng2 app
-Edit /public/vendor/my-app/src/app/my-app.component.html
+Edit /src/app/app.component.html
 ```html
 <div class="row col-md-12">
   <h1 class="text-center">M.E.A.N. Todo App with Angular 2.0</h1>
@@ -227,7 +226,7 @@ Edit /public/vendor/my-app/src/app/my-app.component.html
   </div>
 </div>
 ```
-replace public/vendor/my-app/src/app/my-app.component.ts
+replace /src/app/app.component.ts
 ```ts
 import {Component, OnInit} from '@angular/core';
 import 'rxjs/add/operator/map'
@@ -238,7 +237,7 @@ import {TodoService} from "./todo.service";
   moduleId: module.id,
   selector: 'my-app-app',
   templateUrl: 'my-app.component.html',
-  providers: [TodoService],
+  providers: [TodoService]
 })
 export class MyAppAppComponent implements OnInit {
   todos = [];
@@ -331,7 +330,6 @@ export class MyAppAppComponent implements OnInit {
 }
 ```
 ```
-cd /public/vendor/my-app
 ng g service Todo
 ```
 and update it
@@ -367,126 +365,95 @@ export class TodoService {
 
 }
 ```
-public/vendor/my-app/src/main.ts
-```
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { enableProdMode } from '@angular/core';
-import { HTTP_PROVIDERS } from '@angular/http';
-
-import { MyAppAppComponent, environment } from './app/';
-
-if (environment.production) {
-  enableProdMode();
-}
-
-bootstrap(MyAppAppComponent, [HTTP_PROVIDERS]);
-```
-
-add to public/vendor/my-app/src/system-config.ts BaseURL marked with plus
-```js
-// Apply the CLI SystemJS configuration.
-  System.config({
- +  "baseURL": "my-app/",
-    map: {
-      '@angular': 'vendor/@angular',
-      'rxjs': 'vendor/rxjs',
-```
-and add index.html to views dir
+and edit src/index.html
 ```html
-<!--views/index.html-->
+<!doctype html>
 <html>
 <head>
-    <base href="/">
-    <title>M.E.A.N. Todo App with Angular 2.0</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="vendor/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/app.css">
+  <meta charset="utf-8">
+  <title>M.E.A.N. Todo App with Angular 2.3</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-<div class="container">
-    <my-app-app>
-        <h2 class="text-center">Loading A M.E.A.N. Todo App...</h2>
-    </my-app-app>
-</div>
-
-
-<script src="my-app/vendor/es6-shim/es6-shim.js"></script>
-<script src="my-app/vendor/reflect-metadata/Reflect.js"></script>
-<script src="my-app/vendor/systemjs/dist/system.src.js"></script>
-<script src="my-app/vendor/zone.js/dist/zone.js"></script>
-
-
-
-<script>
-    System.import('my-app/system-config.js').then(function () {
-        System.import('main');
-    }).catch(console.error.bind(console));
-</script>
+  <div class="container">
+    <app-root>
+      <h2 class="text-center">Loading A M.E.A.N. Todo App...</h2>
+    </app-root>
+  </div>
 </body>
 </html>
 ```
-and add css
-```css
+and e /src/styles.scss
+```scss
 * {
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    border-radius: 0 !important;
-    font-family: calibri;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  font-family: calibri;
 }
 .strike span {
-    text-decoration: line-through;
-    color: #ccc;
+  text-decoration: line-through;
+  color: #ccc;
 }
 .todos {
-    padding: 20px;
+  padding: 20px;
 }
 .todo {
-    padding: 10px;
-    font-size: 21px;
-    border-bottom: 1px solid;
+  padding: 10px;
+  font-size: 21px;
+  border-bottom: 1px solid;
 }
-.todo .btn {
+.todo {
+  .btn {
     margin-left: 5px;
     width: 72px;
-}
-.todo:hover {
+  }
+  &:hover {
     background: #e7e7e7;
+  }
 }
 @media (max-width: 991px) {
-    .todo .btn {
-        margin-bottom: 10px;
+  .todo {
+    .btn {
+      margin-bottom: 10px;
     }
-    .todo input[type=checkbox] {
-        width: 25px;
-        height: 25px;
+    input[type=checkbox] {
+      width: 25px;
+      height: 25px;
     }
+  }
 }
 @media (max-width: 991px) {
-    .todo .btn-warning {
-        margin-top: 10px;
-        margin-left: 0px
-    }
+  .todo .btn-warning {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
 }
 @media (max-width: 450px) {
-    .todo .col-xs-8 {
-        width: 85%;
+  .todo {
+    .col-xs-8 {
+      width: 85%;
     }
-    .todo .col-xs-3 {
-        width: 100%;
-        text-align: center;
-        border-top: 1px dashed #aaa;
-        padding-top: 10px;
-        margin-top: 10px;
+    .col-xs-3 {
+      width: 100%;
+      text-align: center;
+      border-top: 1px dashed #aaa;
+      padding-top: 10px;
+      margin-top: 10px;
     }
+  }
 }
 ```
 now in project root
 ```
+ng build -prod --output-path ./public
 node server
 ```
-Finish :)
-p.s. Don`t forget navigate to http://localhost:3000
+Navigate to http://localhost:3000
+Finish of part One :)
 
 
 #### ToDo Integrate Universal for preloading
