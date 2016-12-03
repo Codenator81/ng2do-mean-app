@@ -474,7 +474,7 @@ Navigate to http://localhost:3000
 Finish of part One :)
 
 ## Part Two: Universal
-Just check code
+Just check code becouse App is fully revrited based on part one tutorial
 Shortest way use this https://github.com/devCrossNet/angular-cli#support-for-server-side-rendering
 This project compatible with ung (Universal CLI)
 To run after git clone  
