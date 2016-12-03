@@ -12,7 +12,11 @@ npm install
 bower install
 ung serve
 ```
-command
+For production 
+```
+ung build --prod
+node ./dist/server.bundle.js
+```
 
 ## Part One
 1) Install packages
